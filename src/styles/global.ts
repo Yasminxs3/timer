@@ -6,6 +6,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialized;
+    font-family: 'Roboto', sans-serif;
+
   }
 
   :focus {
@@ -19,8 +21,8 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 
-  border-style, input-security, textarea, button {
-    font-family: 'Roboto', sans-serif;
+  border-style, input-security, textarea, button, label {
+    /* font-family: 'Roboto', sans-serif; */
     font-weight: 400;
     font-size: 1rem;
   }

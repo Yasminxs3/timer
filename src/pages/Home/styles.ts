@@ -62,8 +62,7 @@ export const MinutesAmountInput = styled(BaseInput)`
 `
 
 export const CountContainer = styled.div`
-  font-family: 'Roboto Mono', monospace;
-  font-size: 10rem;
+  font-size: 10rem !important;
   line-height: 8rem;
 
   color: ${(props) => props.theme['gray-100']};
@@ -75,6 +74,7 @@ export const CountContainer = styled.div`
     background: ${(props) => props.theme['gray-700']};
     padding: 2rem 1rem;
     border-radius: 8px;
+    font-family: 'Roboto Mono', monospace !important;
   }
 `
 
