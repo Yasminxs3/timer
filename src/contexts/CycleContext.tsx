@@ -43,16 +43,23 @@ export function CyclesContextProvider({
       cycles: [],
       activeCycleId: null,
     },
-    () => {
-      const storedStateAsJSON = localStorage.getItem(
-        '@timer:cycles-state-1.0.0',
-      )
-      if (storedStateAsJSON) {
-        return JSON.parse(storedStateAsJSON)
+    (initialState) => {
+      try {
+        const storedStateAsJSON = localStorage.getItem(
+          '@timer:cycles-state-1.0.0',
+        )
+        return storedStateAsJSON ? JSON.parse(storedStateAsJSON) : initialState
+      } catch (error) {
+        console.error('Erro ao carregar estado do localStorage:', error)
+        return initialState
       }
     },
   )
-  const { cycles, activeCycleId } = cyclesState
+  const { cycles, activeCycleId } = cyclesState || {
+    cycles: [],
+    activeCycleId: null,
+  }
+
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
 
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(() => {
